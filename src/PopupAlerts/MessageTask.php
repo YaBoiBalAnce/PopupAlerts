@@ -27,7 +27,8 @@ class MessageTask extends PluginTask {
     	$this->plugin = $this->getOwner();
     	if($this->current <= $this->duration){
     		foreach($this->plugin->getServer()->getOnlinePlayers() as $players){
-    			$players->sendPopup($this->plugin->translateColors("&", $this->message));
+    			$this->plugin->drcore->sendPopup($players, 2, $this->message);
+    			//$players->sendPopup($this->plugin->translateColors("&", $this->message));
     		}
     	}else{
     		$this->plugin->getServer()->getScheduler()->cancelTask($this->getTaskId());
