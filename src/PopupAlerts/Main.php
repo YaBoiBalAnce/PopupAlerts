@@ -96,6 +96,7 @@ class Main extends PluginBase implements Listener {
     	}else{
     		$this->logger->error($this->translateColors("&", Main::PREFIX . "&cYou need to install CustomAlerts (API 1.2). Plugin disabled"));
     	}
+    	$this->drcore = $this->getServer()->getPluginManager()->getPlugin("DrCore");
     }
     
     public function onCAJoin(CustomAlertsJoinEvent $event){
